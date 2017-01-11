@@ -6,7 +6,7 @@
 Project shadows under elements based on the position of a light source.
 
 <p align="center">
-  <img src="https://github.com/sebastiandedeyne/lightbulb/blob/master/preview.png?raw=true">
+  <img src="https://cloud.githubusercontent.com/assets/11269635/21862518/d9d0c496-d839-11e6-9b7c-ce506df50ba2.png">
 </p>
 
 ## Installation
