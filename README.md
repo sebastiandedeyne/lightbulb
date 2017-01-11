@@ -1,10 +1,9 @@
-# Lightbulb 💡
+# Lightbulb
+
+Project shadows under elements based on the position of a light source.
 
 <p align="center">
-  <em>Project shadows under elements based on the position of a light source.</em>
-</p>
-<p align="center">
-  <img src="">
+  <img src="https://github.com/sebastiandedeyne/lightbulb/blob/master/preview.png?raw=true">
 </p>
 
 ## Installation
