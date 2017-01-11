@@ -17,6 +17,8 @@ yarn add lightbulb
 
 ## Usage
 
+### Using the mouse as a light source
+
 ```js
 import { mouse as lightbulb } from 'lightbulb';
 
