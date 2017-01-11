@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Lightbulb</title>
+    
+    <style>
+        :root {
+            --block-size: 40px;
+            --block-margin: 10px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: calc((var(--block-size) + var(--block-margin) * 2) * 4);
+            border: 1px solid #eee;
+            padding: calc(var(--block-margin) * 2);
+        }
+
+        article {
+            width: var(--block-size);
+            height: var(--block-size);
+            margin: var(--block-margin);
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+    </section>
+    <script src="./build/app.js"></script>
+</body>
+</html>
