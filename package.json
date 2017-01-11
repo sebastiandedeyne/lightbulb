@@ -10,7 +10,7 @@
     "build": "tsc",
     "build:example": "webpack --config example/webpack.config.js",
     "dev": "webpack-dev-server --config example/webpack.config.js",
-    "prepublish": "build"
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "ts-loader": "^1.3.3",
