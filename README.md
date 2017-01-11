@@ -1,7 +1,7 @@
 # Lightbulb
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![npm](https://img.shields.io/npm/dt/lightbulb.svg?style=flat-square)](https://www.npmjs.com/package/lightbulb)
+[![npm](https://img.shields.io/npm/v/lightbulb.svg?style=flat-square)](https://www.npmjs.com/package/lightbulb)
 
 Project shadows under elements based on the position of a light source.
 
