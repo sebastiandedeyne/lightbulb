@@ -36,10 +36,10 @@ export const relativePositionOnSegment = (segment: { start: number, end: number 
             (position - segment.start) / (segment.end - segment.start);
 
 /**
- * Calculate the offset of a shadow from it's subject.
+ * Calculate the offset of a shadow from it's item.
  */
-export const shadowOffset = (subject: Point, flame: Point & { distance: number }): Point => 
+export const shadowOffset = (item: Point, flame: Point & { distance: number }): Point => 
     ({
-        x: (subject.x - flame.x) * flame.distance,
-        y: (subject.y - flame.y) * flame.distance
+        x: (item.x - flame.x) * flame.distance,
+        y: (item.y - flame.y) * flame.distance
     });

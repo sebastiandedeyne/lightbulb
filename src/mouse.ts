@@ -3,7 +3,7 @@ import { relativePositionInContainer, shadowOffset, Container, Point } from './s
 
 interface Settings {
     container: string
-    subject: string
+    item: string
     distance: number
     spread: string
     color: string
@@ -12,7 +12,7 @@ interface Settings {
 
 export const lightbulb = ({
     container: containerSelector,
-    subject: subjectSelector,
+    item: itemSelector,
     distance,
     spread, 
     color,
@@ -20,24 +20,24 @@ export const lightbulb = ({
 }: Settings) => {
 
     queryAll(containerSelector).forEach((container: HTMLElement) => {
-        const subjects = <HTMLElement[]> queryAll(subjectSelector, container)
+        const items = <HTMLElement[]> queryAll(itemSelector, container)
 
         raf(({ mouse }: State) => {
-            subjects.forEach((subject) => {
+            items.forEach((item) => {
                 const { x, y } = shadowOffsetInContainer(
                     getContainer(container),
-                    getCenter(subject),
+                    getCenter(item),
                     { ...mouse, distance }
                 )
 
-                subject.style.boxShadow = `${x}px ${y}px ${spread} ${color} ${inset ? 'inset' : ''}`;
+                item.style.boxShadow = `${x}px ${y}px ${spread} ${color} ${inset ? 'inset' : ''}`;
             });
         });
     });
 };
 
-const shadowOffsetInContainer = (container: Container, subject: Point, lightbulb: Point & { distance: number }): Point =>
+const shadowOffsetInContainer = (container: Container, item: Point, lightbulb: Point & { distance: number }): Point =>
     shadowOffset(
-        relativePositionInContainer(container, subject),
+        relativePositionInContainer(container, item),
         { ...relativePositionInContainer(container, lightbulb), distance: lightbulb.distance }
     );
