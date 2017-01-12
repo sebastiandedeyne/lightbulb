@@ -1,4 +1,4 @@
-import { Container, Point } from './space';
+import { relativePositionInContainer, Container, Point } from './space';
 
 export interface MousePosition {
     x: number
@@ -45,3 +45,6 @@ export const getContainer = (element: HTMLElement): Container =>
         left: element.offsetLeft,
         top: element.offsetTop
     });
+
+export const positionInContainer = (container: HTMLElement, item: HTMLElement): Point =>
+    relativePositionInContainer(getContainer(container), getCenter(item))
