@@ -2,11 +2,11 @@ const path = require('path');
 
 module.exports = {
     context: __dirname,
-    entry: './app.ts',
+    entry: './lightbulb.js',
     output: {
         path: path.resolve(__dirname, 'build'),
         publicPath: '/',
-        filename: 'app.js',
+        filename: 'lightbulb.js',
     },
     module: {
         rules: [

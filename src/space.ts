@@ -3,6 +3,10 @@ export interface Point {
     y: number
 }
 
+export interface Lightbulb extends Point {
+    distance: number
+}
+
 export interface Container {
     width: number
     height: number
@@ -18,6 +22,16 @@ export const relativePositionInContainer = (c: Container, m: Point): Point =>
     ({
         x: relativePositionOnSegment({ start: c.left, end: c.left + c.width }, m.x),
         y: relativePositionOnSegment({ start: c.top, end: c.top + c.height }, m.y)
+    });
+
+/**
+ * Translate the absolute position of a lightbulb to a position relative to a
+ * container.
+ */
+export const makeLightbulbRelativeToContainer = (container: Container, lightbulb: Lightbulb): Lightbulb =>
+    ({
+        ...relativePositionInContainer(container, lightbulb), 
+        distance: lightbulb.distance
     });
 
 /**
@@ -38,8 +52,18 @@ export const relativePositionOnSegment = (segment: { start: number, end: number 
 /**
  * Calculate the offset of a shadow from it's item.
  */
-export const shadowOffset = (item: Point, flame: Point & { distance: number }): Point => 
+export const shadowOffset = (item: Point, lightbulb: Lightbulb): Point => 
     ({
-        x: (item.x - flame.x) * flame.distance,
-        y: (item.y - flame.y) * flame.distance
+        x: (item.x - lightbulb.x) * lightbulb.distance,
+        y: (item.y - lightbulb.y) * lightbulb.distance
     });
+
+/**
+ * Calculate the offset of a shadow from it's item in the context of a 
+ * container.
+ */
+export const shadowOffsetInContainer = (container: Container, item: Point, lightbulb: Lightbulb): Point =>
+    shadowOffset(
+        relativePositionInContainer(container, item),
+        makeLightbulbRelativeToContainer(container, lightbulb)
+    );

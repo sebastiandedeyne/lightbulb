@@ -1,0 +1,1 @@
+window.Lightbulb = require('../src');

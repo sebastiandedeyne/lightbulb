@@ -1,1 +1,1 @@
-export { lightbulb as mouse } from './mouse'
+export { float, illuminate } from './lightbulb'

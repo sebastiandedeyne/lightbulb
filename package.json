@@ -1,6 +1,6 @@
 {
   "name": "lightbulb",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Project shadows under elements based on the position of a light source",
   "main": "dist/index.js",
   "repository": "https://github.com/sebastiandedeyne/lightbulb",

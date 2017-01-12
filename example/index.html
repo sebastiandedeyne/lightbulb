@@ -20,6 +20,7 @@
             max-width: calc((var(--block-size) + var(--block-margin) * 2) * 4);
             border: 1px solid #eee;
             padding: calc(var(--block-margin) * 2);
+            margin: calc(var(--block-margin) * 2);
         }
 
         article {
@@ -28,10 +29,14 @@
             margin: var(--block-margin);
             position: relative;
         }
+
+        .illuminate article {
+            transition: box-shadow 1s ease-out;
+        }
     </style>
 </head>
 <body>
-    <section>
+    <section class="illuminate">
         <article></article>
         <article></article>
         <article></article>
@@ -49,6 +54,47 @@
         <article></article>
         <article></article>
     </section>
-    <script src="./build/app.js"></script>
+    <section class="float">
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+    </section>
+    <script src="./build/lightbulb.js"></script>
+    <script>
+        Lightbulb.float({
+            container: '.float',
+            item: '.float > article',
+            spread: 20,
+            color: 'rgba(0, 0, 0, .2)',
+            lightbulb: {
+                distance: 20
+            }
+        });
+
+        Lightbulb.illuminate({
+            container: '.illuminate',
+            item: '.illuminate > article',
+            spread: 20,
+            color: 'rgba(0, 0, 0, .2)',
+            lightbulb: {
+                x: 0,
+                y: 0,
+                distance: 20
+            }
+        });
+    </script>
 </body>
 </html>
