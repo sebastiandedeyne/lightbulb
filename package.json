@@ -1,15 +1,14 @@
 {
   "name": "lightbulb",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "description": "Project shadows under elements based on the position of a light source",
   "main": "dist/index.js",
   "repository": "https://github.com/sebastiandedeyne/lightbulb",
   "author": "Sebastian De Deyne",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -r dist; webpack",
     "build:example": "webpack --config example/webpack.config.js",
-    "dev": "webpack-dev-server --config example/webpack.config.js",
     "prepublish": "npm run build"
   },
   "devDependencies": {

@@ -1,25 +1,14 @@
+const config = require('../webpack.base');
 const path = require('path');
 
-module.exports = {
-    context: __dirname,
-    entry: './lightbulb.js',
-    output: {
-        path: path.resolve(__dirname, 'build'),
-        publicPath: '/',
-        filename: 'lightbulb.js',
-    },
-    module: {
-        rules: [
-            {
-                test: /\.ts$/,
-                loader: 'ts-loader',
-            },
-        ],
-    },
-    resolve: {
-        extensions: ['.js', '.ts'],
-    },
-    devServer: {
-        contentBase: __dirname,
-    },
+config.context = __dirname;
+
+config.entry = './lightbulb.js';
+
+config.output = {
+    path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
+    filename: 'lightbulb.js',
 };
+
+module.exports = config;
