@@ -17,20 +17,40 @@ yarn add lightbulb
 
 ## Usage
 
-### Using the mouse as a light source
+### Using a fixed light source
 
 ```js
-import { mouse as lightbulb } from 'lightbulb';
+import Lightbulb from 'lightbulb';
 
-lightbulb({
+Lightbulb.illuminate({
     container: '.js-lightbulb-container',
     item: '.js-lightbulb-item',
-    distance: 20,
     spread: '20px',
     color: 'rgba(0, 0, 0, .2)',
     inset: false,
+    lightbulb: {
+        x: 0,
+        y: 0,
+        distance: 20
+    }
 });
 ```
+
+### Using the mouse as a floating light source
+
+```js
+import Lightbulb from 'lightbulb';
+
+Lightbulb.illuminate({
+    container: '.js-lightbulb-container',
+    item: '.js-lightbulb-item',
+    spread: '20px',
+    color: 'rgba(0, 0, 0, .2)',
+    inset: false,
+    lightbulb: {
+        distance: 20
+    }
+});
 
 ## Example
 
