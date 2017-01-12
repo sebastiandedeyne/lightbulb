@@ -41,7 +41,7 @@ Lightbulb.illuminate({
 ```js
 import Lightbulb from 'lightbulb';
 
-Lightbulb.illuminate({
+Lightbulb.float({
     container: '.js-lightbulb-container',
     item: '.js-lightbulb-item',
     spread: '20px',
