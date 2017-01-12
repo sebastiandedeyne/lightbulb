@@ -51,6 +51,7 @@ Lightbulb.float({
         distance: 20
     }
 });
+```
 
 ## Example
 
