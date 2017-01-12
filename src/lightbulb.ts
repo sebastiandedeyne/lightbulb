@@ -33,9 +33,20 @@ export const illuminate = ({
     inset = false
 }: IlluminateSettings) => {
 
-    queryAll(containerSelector).forEach((container: HTMLElement) => {
-        (<HTMLElement[]> queryAll(itemSelector, container)).forEach((item) => {
-            applyBoxShadow({ container, item, lightbulb, spread, color, inset });
+    queryAll(containerSelector).forEach((containerElement: HTMLElement) => {
+        (<HTMLElement[]> queryAll(itemSelector, containerElement)).forEach((item) => {
+            const container = getContainer(containerElement);
+            const { x, y } = shadowOffsetInContainer(
+                container,
+                getCenter(item),
+                {
+                    x: (lightbulb.x * container.width) + container.left,
+                    y: (lightbulb.y * container.height) + container.top,
+                    distance: lightbulb.distance,
+                }
+            );
+
+            item.style.boxShadow = `${x}px ${y}px ${spread}px ${color} ${inset ? 'inset' : ''}`;
         });
     });
 };
@@ -56,25 +67,14 @@ export const float = ({
         raf(({ mouse }: State) => {
             const lightbulb = { ...mouse, distance };
             items.forEach((item) => {
-                applyBoxShadow({ container,  item,  lightbulb, spread, color, inset });
+                const { x, y } = shadowOffsetInContainer(
+                    getContainer(container),
+                    getCenter(item),
+                    lightbulb
+                );
+
+                item.style.boxShadow = `${x}px ${y}px ${spread}px ${color} ${inset ? 'inset' : ''}`;
             });
         });
     });
 };
-
-const applyBoxShadow = ({ container, item, lightbulb, spread, color, inset }: {
-    container: HTMLElement, 
-    item: HTMLElement, 
-    lightbulb: Lightbulb,
-    spread: number,
-    color: string,
-    inset: boolean
-}) => {
-    const { x, y } = shadowOffsetInContainer(
-        getContainer(container),
-        getCenter(item),
-        lightbulb
-    );
-
-    item.style.boxShadow = `${x}px ${y}px ${spread}px ${color} ${inset ? 'inset' : ''}`;
-}
