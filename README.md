@@ -23,9 +23,9 @@ yarn add lightbulb
 import Lightbulb from 'lightbulb';
 
 Lightbulb.illuminate({
-    container: '.js-lightbulb-container',
-    item: '.js-lightbulb-item',
-    spread: '20px',
+    container: '.lightbulb-container',
+    item: '.lightbulb-item',
+    spread: 20,
     color: 'rgba(0, 0, 0, .2)',
     inset: false,
     lightbulb: {
@@ -42,9 +42,9 @@ Lightbulb.illuminate({
 import Lightbulb from 'lightbulb';
 
 Lightbulb.float({
-    container: '.js-lightbulb-container',
-    item: '.js-lightbulb-item',
-    spread: '20px',
+    container: '.lightbulb-container',
+    item: '.lightbulb-item',
+    spread: 20,
     color: 'rgba(0, 0, 0, .2)',
     inset: false,
     lightbulb: {
